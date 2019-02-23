@@ -1,0 +1,24 @@
+Index: src/components/News.vue
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/components/News.vue	(date 1550905572000)
++++ src/components/News.vue	(date 1550905572000)
+@@ -33,7 +33,7 @@
+                                     <v-list-tile-content>
+                                         <v-list-tile-title >{{ item.date }}</v-list-tile-title>
+                                         <!--<v-list-tile-sub-title class="text&#45;&#45;primary">{{ item.headline }}</v-list-tile-sub-title>-->
+-                                        <v-list-tile-sub-title>{{ item.text }}</v-list-tile-sub-title>
++                                        <v-list-tile-sub-title v-html="item.text"></v-list-tile-sub-title>
+                                     </v-list-tile-content>
+                                 </v-list-tile>
+                                 <v-card>
+@@ -148,6 +148,7 @@
+                         self.editorData = '';
+                         self.dialog = false;
+                         console.log(response);
++                        this.created();
+                     })
+                     .catch(function (error) {
+                         console.log(error);
