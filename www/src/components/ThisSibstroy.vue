@@ -54,7 +54,7 @@
 
 <script>
     export default {
-        name: "ThisSibstroy"
+            name: "ThisSibstroy"
     }
 </script>
 

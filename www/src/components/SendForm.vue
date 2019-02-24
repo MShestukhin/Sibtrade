@@ -69,13 +69,13 @@
             nameErrors () {
                 const errors = []
                 if (!this.$v.name.$dirty) return errors
-                !this.$v.name.required && errors.push('Введите пожалуйста имя')
+                !this.$v.name.required && errors.push('Введите, пожалуйста, имя')
                 return errors
             },
             phoneErrors () {
                 const errors = []
                 if (!this.$v.name.$dirty) return errors
-                !this.$v.name.required && errors.push('Введите пожалуйста телефон')
+                !this.$v.name.required && errors.push('Введите, пожалуйста, телефон')
                 return errors
             },
         },
@@ -88,6 +88,7 @@
                 self=this;
                 if(this.$v.name.$model!='' && this.$v.phone.$model!='') {
                     // axios.get('http://localhost:4444/',
+
                     axios.post('/app/send.php',
                         {
                             name: this.$v.name.$model,

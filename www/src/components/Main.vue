@@ -1,21 +1,30 @@
 <template>
             <v-layout align-content-center justify-center column>
-                <v-flex xs12>
+                <v-flex md12>
                     <carousels/>
                 </v-flex>
                 <!--<v-spacer/>-->
                 <v-flex md12>
                     <v-container>
                         <v-layout d-flex fill-height>
-                            <v-flex d-flex xs4>
+                            <v-flex d-flex md4>
                                 <!--<v-container fill-height>-->
-                                    <news/>
+                                <div v-if="currentRoute==adminPath">
+                                    <v-card max-width="450px">
+                                    <admin-news/>
+                                    </v-card>
+                                </div>
+                                <div v-else>
+                                    <v-card max-width="450px">
+                                        <news/>
+                                    </v-card>
+                                </div>
+                                    <!--<news/>-->
                                 <!--</v-container>-->
                             </v-flex>
-                            <v-flex xs1>
-
+                            <v-flex md1>
                             </v-flex>
-                            <v-flex d-flex xs7>
+                            <v-flex d-flex md7>
                                 <projects/>
                             </v-flex>
                         </v-layout>
@@ -33,7 +42,7 @@
                     <v-container grid-list-md>
                         <about-us/>
                         <!--<v-layout align-center justify-center>-->
-                        <v-flex d-flex 12>
+                        <v-flex d-flex md12>
                             <YundexMap/>
                         </v-flex>
                         <!--</v-layout>-->
@@ -58,11 +67,16 @@
     import MyFooter from "./MyFooter";
     import News from "./News";
     import Projects from "./Projects";
+    import AdminNews from "./AdminNews";
     export default {
-        components: {Projects, News, MyFooter, Footer, AboutUs, ItemGroups, YundexMap, ThisSibstroy, Carousels},
+        components: {
+            AdminNews,
+            Projects, News, MyFooter, Footer, AboutUs, ItemGroups, YundexMap, ThisSibstroy, Carousels},
         name: "Main",
         data: () => ({
+            adminPath: location.protocol + "//" + location.host+"/#/admin",
             drawer: false,
+            currentRoute: window.location,
             services: [
                 {
                     name:"Водоснабжение",

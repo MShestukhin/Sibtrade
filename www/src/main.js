@@ -19,6 +19,11 @@ Vue.use(Router)
 const router = new Router({
     routes: [
         {
+            path: '/admin',
+            name:'admin',
+            component: Main
+        },
+        {
             path: '/',
             name:'home',
             component: Main

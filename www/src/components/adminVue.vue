@@ -1,58 +1,70 @@
 
 <template>
     <!--<v-layout row>-->
-        <!--<v-flex xs12 sm6>-->
-            <v-card>
-                <v-toolbar color="gray" dark>
-                    <v-toolbar-title class="orange--text">Новости</v-toolbar-title>
-                </v-toolbar>
-                <v-list expand>
-                    <template v-for="(item, index) in news">
-                        <!--<v-list-tile-->
-                                <!--:key="item.title"-->
-                                <!--avatar-->
-                                <!--ripple-->
-                                <!--@click="toggle(index)"-->
-                        <!--&gt;-->
-                        <v-list-tile-content>
-                            <!--<v-btn><</v-btn>-->
-                            <v-dialog v-model="dialog" width="600px">
-                                <v-list-tile slot="activator" @click="dialog = true; editorData=item.text; id=item.id">
-                                    <v-list-tile-content>
-                                        <!--<v-list-tile-sub-title class="text&#45;&#45;primary">{{ item.headline }}</v-list-tile-sub-title>-->
-                                        <!--<v-card max-width="300px">-->
-                                            <v-list-tile-sub-title v-html="item.text"></v-list-tile-sub-title>
-                                        <!--</v-card>-->
-                                    </v-list-tile-content>
-                                    <v-divider
-                                            v-if="index + 1 < items.length"
-                                            :key="index"
-                                    ></v-divider>
-                                </v-list-tile>
-                                <v-card>
-                                    <v-container grid-list-md text-xs-center>
-                                        <v-layout row wrap>
-                                                <v-card v-html="editorData"></v-card>
-                                        </v-layout>
-                                    </v-container>
-                                </v-card>
+    <!--<v-flex xs12 sm6>-->
+    <v-card>
+        <v-toolbar color="gray" dark>
 
-                            </v-dialog>
-                            <v-divider
-                                    v-if="index + 1 < items.length"
-                                    :key="index"
-                            ></v-divider>
-                        </v-list-tile-content>
+            <v-toolbar-title class="orange--text">Новости</v-toolbar-title>
+        </v-toolbar>
+        <v-list expand>
+            <v-btn
+                    absolute
+                    dark
+                    fab
+                    top
+                    right
+                    color="orange"
+                    @click="dialog = true; id='-1'"
+            >
+                <v-icon>add</v-icon>
+            </v-btn>
+            <template v-for="(item, index) in news">
+                <!--<v-list-tile-->
+                <!--:key="item.title"-->
+                <!--avatar-->
+                <!--ripple-->
+                <!--@click="toggle(index)"-->
+                <!--&gt;-->
+                <v-list-tile-content>
+                    <!--<v-btn><</v-btn>-->
+                    <v-dialog v-model="dialog" width="600px">
+                        <v-list-tile slot="activator" @click="dialog = true; editorData=item.text; id=item.id">
+                            <v-list-tile-content>
+                                <!--<v-list-tile-sub-title class="text&#45;&#45;primary">{{ item.headline }}</v-list-tile-sub-title>-->
+                                <v-list-tile-sub-title v-html="item.text"></v-list-tile-sub-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+                        <v-card>
+                            <v-container grid-list-md text-xs-center>
+                                <v-layout row wrap>
+                                    <v-flex xs4>
+                                        <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
+                                    </v-flex>
+                                    <v-flex xs4>
+                                    </v-flex>
+                                    <v-flex xs4>
+                                        <v-card v-html="editorData"></v-card>
+                                    </v-flex>
+                                </v-layout>
+                            </v-container>
+                            <v-btn color="orange darken-1" flat="flat" @click="dialog = false; editorData=''">Закрыть</v-btn>
+                            <v-btn color="orange darken-1" flat="flat" @click="saveNews(id,editorData)">Сохранить</v-btn>
+                            <v-btn color="orange darken-1" flat="flat" @click="deleteNews(id)">Удалить</v-btn>
+                        </v-card>
 
-                        <!--</v-list-tile>-->
-                        <v-divider
-                                v-if="index + 1 < items.length"
-                                :key="index"
-                        ></v-divider>
-                    </template>
-                </v-list>
-            </v-card>
-        <!--</v-flex>-->
+                    </v-dialog>
+                </v-list-tile-content>
+
+                <!--</v-list-tile>-->
+                <v-divider
+                        v-if="index + 1 < items.length"
+                        :key="index"
+                ></v-divider>
+            </template>
+        </v-list>
+    </v-card>
+    <!--</v-flex>-->
     <!--</v-layout>-->
 </template>
 
@@ -149,7 +161,7 @@
                     });
             }
         }
-}
+    }
 </script>
 
 <style>
