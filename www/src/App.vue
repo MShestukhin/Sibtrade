@@ -42,7 +42,7 @@
         </v-navigation-drawer>
         <v-toolbar app fixed clipped-left dark>
             <v-toolbar-side-icon color="orange" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title class="orange--text"><br>Сибтрейд <br><p class="body-1">Полимерные трубы и фитинги</p></v-toolbar-title>
+            <v-toolbar-title class="orange--text"><br>СибТрейд <br><p class="body-1">Полимерные трубы и фитинги</p></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
                 <!--//"back(link.name,'',link.link)"-->

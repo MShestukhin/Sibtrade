@@ -9,6 +9,7 @@ import  Product from './components/Product'
 import  Contacts from './components/Contacts'
 import  Company from './components/Company'
 import  Designer from './components/Designer'
+import  EditorComponents from './components/EditorComponents'
 // register globally
 import YmapPlugin from 'vue-yandex-maps'
 import CKEditor from '@ckeditor/ckeditor5-vue';
@@ -32,6 +33,12 @@ const router = new Router({
             path: '/post/:link',
             name:'post',
             component: HelloWorld,
+            props: true
+        },
+        {
+            path: '/edit/:id',
+            name:'edit',
+            component: EditorComponents,
             props: true
         },
         {

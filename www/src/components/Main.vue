@@ -25,7 +25,8 @@
                             <v-flex md1>
                             </v-flex>
                             <v-flex d-flex md7>
-                                <projects/>
+                                <!--<projects/>-->
+                                <admin-projects/>
                             </v-flex>
                         </v-layout>
                     </v-container>
@@ -68,8 +69,10 @@
     import News from "./News";
     import Projects from "./Projects";
     import AdminNews from "./AdminNews";
+    import AdminProjects from "./AdminProjects";
     export default {
         components: {
+            AdminProjects,
             AdminNews,
             Projects, News, MyFooter, Footer, AboutUs, ItemGroups, YundexMap, ThisSibstroy, Carousels},
         name: "Main",

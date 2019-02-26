@@ -70,13 +70,13 @@
                 selected: [2],
                 dialog: false,
                 news:[],
-                editor: ClassicEditor,
-                editorData: '',
-                editorConfig: {
-                    ckfinder: {
-                        uploadUrl: location.protocol + "//" + location.host + '/sendIMG.php'
-                    }
-                },
+                    editor: ClassicEditor,
+                    editorData: '',
+                    editorConfig: {
+                        ckfinder: {
+                            uploadUrl: location.protocol + "//" + location.host + '/sendIMG.php'
+                        }
+                    },
                 items: [
                     {
                         action: '15 min',

@@ -13,7 +13,6 @@
                     <v-card-title primary-title>
                         <div>
                             <h3 class="headline mb-0">{{card_text}}</h3>
-
                         </div>
                     </v-card-title>
 
@@ -60,10 +59,10 @@
 
         </v-layout>
     </v-card>
-    </v-flex>
 </template>
 
 <script>
+    var fs = require('fs');
     export default {
         name: "Projects",
         data: function () {
@@ -95,6 +94,27 @@
                     // },
                 ]
             }
+        },
+        created(){
+            const testFolder = location.protocol + "//" + location.host + '/static/';
+            var path = require('path');
+
+            var getFiles = function (dir, files_){
+
+                files_ = files_ || [];
+                var files = fs.readdirSync(dir);
+                for (var i in files){
+                    var name = dir + '/' + files[i];
+                    if (fs.statSync(name).isDirectory()){
+                        getFiles(name, files_);
+                    } else {
+                        files_.push(name);
+                    }
+                }
+                return files_;
+            };
+
+            console.log(getFiles(testFolder));
         },
         methods: {
             back(title, dsc, link) {
