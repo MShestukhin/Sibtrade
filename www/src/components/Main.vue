@@ -26,7 +26,12 @@
                             </v-flex>
                             <v-flex d-flex md7>
                                 <!--<projects/>-->
-                                <admin-projects/>
+                                <div v-if="currentRoute==adminPath">
+                                        <admin-projects/>
+                                </div>
+                                <div v-else>
+                                        <projects/>
+                                </div>
                             </v-flex>
                         </v-layout>
                     </v-container>

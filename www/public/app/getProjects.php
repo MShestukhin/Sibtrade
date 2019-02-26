@@ -17,6 +17,13 @@ else{
 }
 $mass=[];
 while ($row = $results->fetchArray()) {
+    $imgFolder=$row['img'];
+//    if($imgFolder){
+        $dir= "./projects/".$row['img'];
+        $files = array_diff(scandir($dir,1), array('..', '.'));
+        $files = array('items' => $files);
+        $row[]=$files;
+//    }
     $mass[]=json_encode($row);
 }
 echo json_encode($mass);

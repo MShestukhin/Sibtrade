@@ -74,10 +74,6 @@
                     })
                     .then(function (response) {
                         self.$router.push({name: 'home'});
-                        // self.editorData = '';
-                        // self.dialog = false;
-                        // console.log(response);
-                        // location.reload();
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -91,10 +87,6 @@
                     })
                     .then(function (response) {
                         self.$router.push({name: 'home'});
-                        // self.editorData = '';
-                        // self.dialog = false;
-                        // console.log(response);
-                        // location.reload();
                     })
                     .catch(function (error) {
                         console.log(error);
