@@ -45,7 +45,7 @@
                                 @click="back(item.id)"
                         >
                             <v-list-tile-avatar>
-                                <img :src="item.avatar">
+                                <img :src="imgPathG+item.img+'/'+item[4].items[0]">
                             </v-list-tile-avatar>
 
                             <v-list-tile-content>
@@ -69,8 +69,9 @@
         data: function () {
             return {
                 mainProject:{},
+                imgPathG: location.protocol + "//" + location.host+"/app/projects/",
                 card_text: 'Участие в строительстве и поставке материалов для рудника Гросс',
-                imgGros: location.protocol + "//" + location.host + '/static/img/LA.jpg',
+                imgGros: '',
                 link:'p_Gross',
                 projects:[],
                 dsc: 'Новый золотодобывающий рудник «Гросс» в Якутии, запуск которого намечен на вторую половину 2018 года, обеспечил в 2018 году около 800 рабочих мест и более 900 — на весь период освоения нового месторождения, а это порядка 17 лет. К строительству рудника «Гросс» приступили в начале 2016 года. В ходе двухлетнего периода строительства предприятие создало более 300 временных рабочих мест. На данный момент число постоянных рабочих, обеспечивающих операционную деятельность «Гросса», составило 403 человека. Еще столько же будут трудоустроены на рудник до конца этого года. Таким образом, общая численность персонала на «Гроссе» составит более 800 человек, из которых 171 человек (21%) – инженерно-технические работники и 636 (79%) – рабочие. Процессом укомплектования кадрами занимаются специалисты службы персонала «Нерюнгри-Металлик» и компании NordgoldВ строительство нового рудника вложено около 250 млн долларов США.\n' +
@@ -81,11 +82,11 @@
         created() {
             axios.post('/app/getProjects.php')
                 .then(response=>{
-                    console.log(response);
                     for(var i=0; i<response.data.length-1;i++){
                         this.projects.push(JSON.parse(response.data[i]));
                     }
                     this.mainProject=JSON.parse(response.data[response.data.length-1]);
+                    this.imgGros=this.imgPathG+this.mainProject.img+"/"+this.mainProject[4].items[0];
                 })
                 .catch(function (error) {
                     console.log(error);

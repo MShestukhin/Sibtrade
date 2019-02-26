@@ -9,24 +9,6 @@
                         :key="index"
                         :src="imgPathG+imgPath+'/'+item"
                 >
-                    <!--<v-img-->
-                    <!--:src="item.src"-->
-                    <!--&gt;</v-img>-->
-                    <!--<v-layout align-end justify-start row fill-height>-->
-                        <!--<v-card max-height max-width-->
-                        <!--&gt;-->
-                            <!--<v-card-title primary-title>-->
-                                <!--<div>-->
-                                    <!--<h3 class="headline mb-0">{{title}}</h3>-->
-                                <!--</div>-->
-                                <!--<v-card-actions>-->
-                                    <!--<v-btn flat color="orange"@click="">{{item}}-->
-                                    <!--</v-btn>-->
-                                    <!--&lt;!&ndash;<v-btn flat v-if=item.download color="orange" @click="back(item.link_price)">Скачать прайс</v-btn>&ndash;&gt;-->
-                                <!--</v-card-actions>-->
-                            <!--</v-card-title>-->
-                        <!--</v-card>-->
-                    <!--</v-layout>-->
                 </v-carousel-item>
             </v-carousel>
 
@@ -69,12 +51,8 @@
                     id: this.id
                 })
                 .then(response => {
-                    console.log(response);
                     this.project=JSON.parse(response.data);
-                    console.log(this.project.title);
-                    console.log(this.project[4].items);
                     this.items=this.project[4].items;
-                    console.log(this.items);
                     this.text = this.project.dsc;
                     this.title = this.project.title;
                     this.imgPath = this.project.img;

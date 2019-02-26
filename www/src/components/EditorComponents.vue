@@ -13,15 +13,15 @@
                     label="Path"
                     required
             ></v-text-field>
+            <!--<form action="upload.php" method="post" enctype="multipart/form-data">-->
+                <!--<input type="file" name="filename"><br>-->
+                <!--<input type="submit" value="Загрузить"><br>-->
+            <!--</form>-->
             <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor>
-            <v-btn color="orange darken-1" flat="flat" @click="back()">Закрыть</v-btn>
-            <v-btn color="orange darken-1" flat="flat" @click="saveProject(id,title,editorData, imgPath)">Сохранить</v-btn>
-            <v-btn color="orange darken-1" flat="flat" @click="deleteNews(id)">Удалить</v-btn>
+                <v-btn color="orange darken-1" flat="flat" @click="back()">Закрыть</v-btn>
+                <v-btn color="orange darken-1" flat="flat" @click="saveProject(id,title,editorData, imgPath)">Сохранить</v-btn>
+                <v-btn color="orange darken-1" flat="flat" @click="deleteNews(id)">Удалить</v-btn>
         </v-form>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="filename"><br>
-            <input type="submit" value="Загрузить"><br>
-        </form>
     </v-container>
 </template>
 
@@ -42,7 +42,7 @@
                 editorData: '',
                 editorConfig: {
                     ckfinder: {
-                        uploadUrl: location.protocol + "//" + location.host + '/sendIMG.php'
+                        uploadUrl: location.protocol + "//" + location.host + '/app/sendIMG.php'
                     }
                 },
             }
