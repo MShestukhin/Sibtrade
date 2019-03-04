@@ -11,6 +11,7 @@ import  Company from './components/Company'
 import  Designer from './components/Designer'
 import  EditorComponents from './components/EditorComponents'
 import  Project from './components/Project'
+import  NewProduct from './components/NewProduct'
 // register globally
 import YmapPlugin from 'vue-yandex-maps'
 import CKEditor from '@ckeditor/ckeditor5-vue';
@@ -54,10 +55,16 @@ const router = new Router({
             component: Provider,
             props: true
         },
+        // {
+        //     path: '/product',
+        //     name:'product',
+        //     component: Product,
+        //     props: true
+        // },
         {
             path: '/product',
             name:'product',
-            component: Product,
+            component: NewProduct,
             props: true
         },
         {

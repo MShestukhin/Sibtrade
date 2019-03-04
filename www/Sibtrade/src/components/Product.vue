@@ -1,10 +1,14 @@
 <template>
+    <v-parallax
+            dark
+            src="http://newsforyou.kz/uploads/images/00/00/01/2016/08/12/f64053.jpg"
+            height="2000px"
+    >
     <v-layout row>
-        <v-flex xs12 sm8 offset-sm2>
+        <v-flex xs12 sm4 offset-sm4>
             <v-card>
                 <v-list two-line subheader>
                     <v-subheader inset  class="orange--text">Полимерные трубы</v-subheader>
-
                     <v-list-tile
                             v-for="item in items"
                             :key="item.title"
@@ -98,13 +102,15 @@
             </v-card>
         </v-flex>
     </v-layout>
+    </v-parallax>
 </template>
 
-<script>
+        <script>
     export default {
         name: "Product",
         data() {
             return {
+                paralaxPath: location.protocol + "//" + location.host+'/static/img/paralax.jpg',
                 items: [
                     {
                         avatar: 'http://www.polyplastic.ru/upload/production/menu/gost_water.jpg',
@@ -322,7 +328,7 @@
                             '</ul>\n' +
                             '<p>Многослойные трубы «МультиТех» предназначены для использования в строительстве подземных напорных трубопроводов, обеспечивающих хозяйственно-питьевое водоснабжение, а также для транспортировки газообразных веществ при температуре от 0 до +40°С. При этом возможно проведение укладки труб всех трёх типов с обратной засыпкой любым видом грунта, кроме валунного, с предварительным уплотнением дна траншеи. Трубы многослойные с содержанием слоя полиэтилена PE100RC с защитной оболочкой PROSAFE рекомендуются для использования при прокладке и реконструкции трубопроводов методами бестраншейных технологий (горизонтально-направленное бурение, релайнинг, замена изношенного трубопровода с его разрушением и т.п.).</p>\n',
 
-                        // link: 'multiteh',
+                        link: 'multiteh',
                     }
                 ],
                 items2: [
