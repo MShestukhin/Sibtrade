@@ -1,9 +1,10 @@
 <template>
-    <v-container text-md-center>
-    <v-layout>
-        <v-flex xs12>
+    <v-container fluid text-xs-center>
+    <!--<v-layout>-->
+        <!--<v-flex xs12>-->
             <v-tabs
                     slider-color="orange">
+                <v-spacer></v-spacer>
                 <v-tab>
                     Полимерные трубы
                 </v-tab>
@@ -169,12 +170,11 @@
                             </v-card>
                         </v-timeline-item>
                     </v-timeline>
-
-
                 </v-tab-item>
+                <v-spacer></v-spacer>
             </v-tabs>
-        </v-flex>
-    </v-layout>
+        <!--</v-flex>-->
+    <!--</v-layout>-->
     </v-container>
 </template>
 

@@ -1,4 +1,5 @@
 <template>
+    <v-container fluid text-xs-center>
     <v-timeline>
         <v-timeline-item
                 color="orange lighten-2"
@@ -115,6 +116,7 @@
                 </v-card>
             </v-timeline-item>
         </v-timeline>
+    </v-container>
 </template>
 
 <script>
