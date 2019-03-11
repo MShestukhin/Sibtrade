@@ -671,8 +671,7 @@
                 } else {
                     this.$router.push({name: 'home'});
                 }
-            }
-            ,
+            },
 
             handleScroll: function (evt, el) {
                 this.dialog=false;
@@ -694,3 +693,15 @@
         // }
     }
 </script>
+
+<style>
+    #inspire {
+        background-image: url('http://stroimoroshenie.ru/wp-content/uploads/2017/04/IMG_1982.jpg');
+        /*background-color: gray;*/
+        /* background-color: #8f2c2c; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+</style>

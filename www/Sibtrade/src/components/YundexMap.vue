@@ -1,4 +1,5 @@
 <template>
+
     <yandex-map
             :coords="[52.282701, 104.330454]"
             zoom="15"
@@ -22,18 +23,18 @@
             cluster-name="1"
     ></ymap-marker>
 
-    <!--<ymap-marker-->
-            <!--marker-type="placemark"-->
-            <!--:coords="[54.6, 39.8]"-->
-            <!--hint-content="Hint content 1"-->
-            <!--:balloon="{header: 'header', body: 'body', footer: 'footer'}"-->
-            <!--:icon="{color: 'green', glyph: 'cinema'}"-->
-            <!--cluster-name="1"-->
-    <!--&gt;</ymap-marker>-->
+    <ymap-marker
+            marker-type="placemark"
+            :coords="[52.247796, 104.191440]"
+            hint-content="Hint content 1"
+            :balloon="{header: 'header', body: 'body', footer: 'footer'}"
+            :icon="{color: 'blue'}"
+            cluster-name="1"
+    ></ymap-marker>
 
     <!--<ymap-marker-->
             <!--marker-type="circle"-->
-            <!--:coords="[54.62896654088406, 39.731893822753904]"-->
+            <!--:coords="[52.247796, 104.191440]"-->
             <!--circle-radius="1600"-->
             <!--hint-content="Hint content 1"-->
             <!--:marker-fill="{color: '#000000', opacity: 0.4}"-->
@@ -49,6 +50,7 @@
         name: "YundexMap",
         data() {
             return {
+                allowSpaces: false,
                 placemarks: [
                     {
                         coords: [52.286387, 104.280660],

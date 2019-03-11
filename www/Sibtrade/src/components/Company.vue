@@ -1,7 +1,7 @@
     <template>
+        <v-container fluid>
         <v-card
                 class="mx-auto"
-                max-width="1200"
         >
             <v-card
                     dark
@@ -136,6 +136,7 @@
                 </v-timeline>
             </v-card-text>
         </v-card>
+        </v-container>
     </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
-    <v-component>
-    <v-layout row>
-        <v-flex xs12 sm8 offset-sm2>
+    <v-container fluid >
+    <!--<v-layout row>-->
+        <!--<v-flex xs12 sm8 offset-sm2>-->
             <v-card>
                 <v-img
                         :src="img"
@@ -92,9 +92,9 @@
                     </v-list-tile>
                 </v-list>
             </v-card>
-        </v-flex>
-    </v-layout>
-    </v-component>
+        <!--</v-flex>-->
+    <!--</v-layout>-->
+    </v-container>
 </template>
 
 <script>
@@ -102,7 +102,8 @@
         name: "Contacts",
         data: function(){
             return {
-                img: location.protocol + "//" + location.host + '/static/img/contacts.jpg'
+                // img: location.protocol + "//" + location.host + '/static/img/contacts.jpg'
+                img: 'http://www.best-pipe.ru/images/26.02.15/3/vod6.jpg'
             }
         },
     }
